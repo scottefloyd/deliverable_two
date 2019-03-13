@@ -4,13 +4,17 @@ function wtwFunction() {
     
     do {
     
-        var eventType = prompt("What type of event are you going to?");
+        var eventType = prompt("What type of event are you going to? Please choose either casual, semi-form, or formal.");
+        
+        if (eventType === null) {
+            return;
+        }
     
         if (eventType != "casual" && eventType != "semi-formal" && eventType != "formal") {
            // alert("Please try again and enter either casual, semi-formal, or formal.")
            // return;
             condition=false;
-        } else {
+        }  else {
             condition=true;
         }
     }   while (condition===false);
@@ -32,8 +36,14 @@ function wtwFunction() {
     var tempFahr;
     
     do {
-        tempFahr = parseInt(prompt("What is the temperature in degrees Fahrenheit today?"));
+        tempFahr = parseInt(prompt("What is the temperature in degrees Fahrenheit today? Please enter a number value."));
         
+        console.log(tempFahr);
+        
+        if (isNaN(tempFahr)===true) {
+            return;
+        }
+        //try regex here.
         if (isNaN(tempFahr)===true) {
             condition=false;
         } else {
